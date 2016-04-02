@@ -7,28 +7,32 @@
    */
   var Model = function() {
     this.id = Date.now(); //
+    this._fields = {};
   };
 
-  // TODO: develop
   /**
-   *
+   * Get the value of a name.
+   * 
    * @param {String} name
+   * 
    */
   Model.prototype.get = function(name) {
-
+    return this.name;
   };
 
-  // TODO: develop
   /**
-   *
+   * Updating the data and save oldValue
+   * 
    * @param {String} name
    * @param {*} value
    */
   Model.prototype.set = function(name, value) {
     
+      var oldValue = this._fields[name];
+      this._fields[name] = value;
+    
   };
   
-
   if (global) {
     global.App = global.App || {};
     global.App.Model = Model;
