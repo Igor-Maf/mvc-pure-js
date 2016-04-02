@@ -7,8 +7,7 @@
    */
   var Model = function() {
     this.id = Date.now(); //
-    this._fields = {};
-    this.attributes = {};
+    this._attributes = {};
   };
 
   /**
@@ -18,7 +17,7 @@
    * 
    */
   Model.prototype.get = function(name) {
-    return this.attributes[name];
+    return this._attributes[name];
   };
 
   /**
@@ -29,8 +28,8 @@
    */
   Model.prototype.set = function(name, value) {
     
-      var oldValue = this.attributes[name];
-      this.attributes[name] = value;
+      var oldValue = this._attributes[name];
+      this._attributes[name] = value;
     
   };
   
